@@ -1,2 +1,4 @@
 # ClienteUDAW
-Prácticas para javascript de segundo de dual. 
+Prácticas de Javascript de segundo de DAW en modalidad dual. 
+
+

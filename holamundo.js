@@ -1,1 +1,5 @@
-alert("hola mundo");
+function hola() {
+    alert("hola mundo");
+}
+
+hola();
