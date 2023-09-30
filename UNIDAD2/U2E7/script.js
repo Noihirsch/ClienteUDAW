@@ -7,11 +7,14 @@
 
 
 
-function verifEdad(){
+function verifAge(){
     let quest = '¿Cuál es el apellido del primer presidente de la democracia?'
-    do{ (prompt(quest)) }while (quest.toLocaleLowerCase != 'suárez')
+    let resp;
+    do{ 
+       resp=(prompt(quest));
+    }while (resp.toLowerCase != 'suárez')
 }
 
-verifEdad();
+verifAge();
 
 

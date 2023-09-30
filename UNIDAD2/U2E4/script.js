@@ -13,5 +13,14 @@ let respuesta = prompt("Introduce una edad");
 if(respuesta >= 0 && respuesta <= 12){
     alert ("Niño");
 }
+ if(respuesta >= 13 && respuesta <= 26){
+    alert ("Jóven");
+ }
+ if(respuesta >= 27 && respuesta <= 60){
+    alert ("Adulto");
+}
+if(respuesta>60){
+     alert ("Jubilado");
+    }
 
 

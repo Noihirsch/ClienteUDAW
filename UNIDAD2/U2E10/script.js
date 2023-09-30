@@ -5,7 +5,7 @@
 
 
 function mostrarMetodo(){
-    let x = prompt('Bienvenido, Fernando. ¿Qué método deseas emplear? (escribe 1 para usar el primero.)')
+    let x = prompt('Bienvenido ¿Qué método deseas emplear? (escribe 1 para usar el primero.)');
     if (x == '1'){
         verConvocada1();
     }
@@ -22,7 +22,7 @@ if (quest == convocadas.includes(quest)){
     alert(quest + " está convocada");
 }
 
-else alert("no convocada")
+else alert("No convocada")
 }
 
 
