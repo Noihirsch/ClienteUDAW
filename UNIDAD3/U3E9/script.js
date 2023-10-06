@@ -4,43 +4,52 @@
 // enlace donde se explica cómo calcular ese dígito de control.
 // Necesitamos un formulario con dos campos: en el primero se introducen los dígitos del NIF o NIE y en el segundo debería aparecer la letra correspondiente.
 
-let numId;
-numId = document.getElementById("dni").value;
+let dniNum = document.getElementById("dniNum").value;
 var charID = document.getElementById("char").value;
 let total = 0;
 var opc;
+
+document.addEventListener("DOMContentLoaded", function() {
+    function calChar() {
+        var dniNum = document.getElementById("dniNum").value;
+        // rest of your code
+    }
+
+    // Call the calChar function when the button is clicked
+    document.getElementById("calButton").addEventListener("click", calChar);
+});
 function calChar (){
     
-    for (let i = 0; i<numID.length(); i++){
-        total = total + numID.charAt(i);
+    for (let i = 0; i<dniNum.length; i++){
+        total = total + dniNum.charAt(i);
     }
     opc = total % 23;
 
-    switch(opc){
-        case 0: return "T";
-        case 1:return "R";
-        case 2:return "W";
-        case 3:return "A";
-        case 4:return "G";
-        case 5: return "M";
-        case 6: return "Y";
-        case 7:return "F";
-        case 8: return "P";
-        case 9:return "D";
-        case 10:return "X";
-        case 11:return "B";
-        case 12:return "N";
-        case 13:return "J";
-        case 14:return "Z";
-        case 15:return "S";
-        case 16:return "Q";
-        case 17:return "V";
-        case 18:return "H";
-        case 19:return "L";
-        case 20:return "C";
-        case 21:return "K";
-        case 22:return "E";
-    }
+    if (opc == 0){ console.log("T") };
+    if (opc == 1){ console.log("R") };
+    if (opc == 2){ console.log("W") };
+    if (opc == 3){ console.log("A") };
+    if (opc == 4){ console.log("G") };
+    if (opc == 5){ console.log("M") };
+    if (opc == 6){ console.log("Y") };
+    if (opc == 7){ console.log("F") };
+    if (opc == 8){ console.log("P") };
+    if (opc == 9){ console.log("D") };
+    if (opc == 10){ console.log('X') };
+    if (opc == 11){ console.log('B') };
+    if (opc == 12){ console.log('N') };
+    if (opc == 13){ console.log('J') };
+    if (opc == 14){ console.log('Z') };
+    if (opc == 15){ console.log('S') };
+    if (opc == 16){ console.log('Q') };
+    if (opc == 17){ console.log('V') };
+    if (opc == 18){ console.log('H') };
+    if (opc == 19){ console.log('L') };
+    if (opc == 20){ console.log ('C') };
+    if (opc == 21){ console.log ('K') };
+    if (opc == 22){ console.log ('E') };
+
+
 
 }
 calChar();
