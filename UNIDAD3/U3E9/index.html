@@ -8,8 +8,10 @@
 <script src="script.js"></script>
 </head>
 <body>
-    <input type="text" id="dniNum" placeholder="Números del DNI/NIF"><br>
-    <button onclick="calChar()">Letra de mi DNI</button>
-
+    <form>
+        <input type="text" id="digits" name="digitos" placeholder="Inserte" required>
+        <button onclick="calcChar()">Calcular letra</button>
+        <p>La letra es: <span id="letra"></span></p>
+    </form>
 </body>
 </html>
