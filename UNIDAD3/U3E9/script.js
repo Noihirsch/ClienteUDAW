@@ -11,7 +11,7 @@ var opc;
 
 document.addEventListener("DOMContentLoaded", function() {
     function calChar() {
-        var dniNum = document.getElementById("dniNum").value;
+        let dni = document.getElementById("dniNum").value;
         // rest of your code
     }
 
@@ -20,11 +20,10 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 function calChar (){
     
-    for (let i = 0; i<dniNum.length; i++){
-        total = total + dniNum.charAt(i);
+    for (let i = 0; i<dni.length; i++){
+        total = total + dni.charAt(i);
     }
     opc = total % 23;
-
     if (opc == 0){ console.log("T") };
     if (opc == 1){ console.log("R") };
     if (opc == 2){ console.log("W") };
@@ -48,9 +47,6 @@ function calChar (){
     if (opc == 20){ console.log ('C') };
     if (opc == 21){ console.log ('K') };
     if (opc == 22){ console.log ('E') };
-
-
-
 }
 calChar();
 

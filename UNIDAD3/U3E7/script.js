@@ -13,10 +13,10 @@ function showDate(){
 
 
 //forma 2 usando timeOut
-// if (i>0){
-//     setTimeout(showDate, 2000);
-// }
+if (i>0){
+    setTimeout(showDate, 2000);
+ }
 
-// setTimeout(showDate, 2000);
+ setTimeout(showDate, 2000);
 
 
