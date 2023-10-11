@@ -9,7 +9,6 @@
 function calcChar(){
     let total = 0;
     let d = document.getElementById('digits').value();
-
     for (let numero = 0; numero < d.length; numero){
         total = total + d.charAt(numero);
         total = total%23;

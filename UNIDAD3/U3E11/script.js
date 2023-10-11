@@ -22,3 +22,16 @@
 
 document.querySelector('.localization').addEventListener('click', showLocalization);
 
+
+
+if (navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(showPosition);
+}
+else {
+    document.getElementById("geolocalizacion".innerHTML ="");
+
+}
+
+function showPosition(position){
+    (console.log("Latitud" + position.coords.latitude + "longitud " + position.oords.longitude) )
+}
