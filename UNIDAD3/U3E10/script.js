@@ -7,9 +7,9 @@
 
 function redirectToError() {
     let ans = prompt("¿Cuánto es 2+2");
-    ans= parseInt(ans); 
-    if (ans ==! 4){
-        location.replace("UNIDAD3/U3E10/error.html");
+    if (ans != 4){
+        alert("Incorrecto. Serás redirigido a....")
+        window.location.href = "error.html"
     }
     else alert("Correcto!");
 }
