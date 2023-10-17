@@ -33,7 +33,7 @@ function showCountries(){
     }
 }
 function newCountry(){
-    let new Country = prompt("1. Al principio 2. Al final")
+    let newCountry = prompt("1. Al principio 2. Al final")
     newCountry = prompt("Nombre del país:");
     newCountry.toLowerCase();
     if (newCountry != null && !countries.includes(newCountry)) {
