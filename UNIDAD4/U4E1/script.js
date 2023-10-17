@@ -5,7 +5,7 @@
 // Añadir un país (y le preguntará si quiere añadir al principio o al final).
 // Borrar un país (y le preguntará si quiere borrar al principio o al final).
 // Consultar un país (y le preguntará si quiere consultar por posición o por nombre).
-let countries = ["España", "Alemania", "Italia", "Portugal"];
+let countries = ["españa", "alemania", "italia", "portugal"];
 function countCountries() {
     let value = countries.length;
     console.log(value);
@@ -33,22 +33,48 @@ function showCountries(){
     }
 }
 function newCountry(){
-    let newCountry = prompt("Nombre del país:");
+    let new Country = prompt("1. Al principio 2. Al final")
+    newCountry = prompt("Nombre del país:");
+    newCountry.toLowerCase();
     if (newCountry != null && !countries.includes(newCountry)) {
         countries.push(newCountry);
+        showCountries();
+        countCountries();
+        console.log("Se ha añadido" + newCountry);
     }
-
+    
     else console.log("No se ha podido añadir el país");
 
 }
 
 function deleteCountry(){
-    let deleteCountry = prompt("Nombre del país a borrar:");
+    let deleteCountry = prompt("1. Por posición 2. Por nombre");
+    switch(deleteCountry){
+        case "1":
+            let i = prompt("Inserte la posición en el array");
+            i = parseInt(i);
+            countries.splice(i, 1);
+            showCountries();
+            countCountries();
+            console.log("Se ha borrado " + deleteCountry);
+            break;
+        case "2":
+            deleteCountry = prompt("Inserte nombre del país a borrar");
+            deleteCountry.toLowerCase();
+            if (deleteCountry != null && countries.includes(deleteCountry)) {
+                let i = countries.indexOf(deleteCountry);
+                countries.splice(i, 1);
+                showCountries();
+                countCountries();
+                console.log("Se ha borrado " + deleteCountry);
+            }
+            break;
+        default:
+            console.log("Opción inválida");
+        }
+
     
-    if (deleteCountry != null && countries.includes(deleteCountry)) {
-        let i = countries.indexOf(deleteCountry);
-        countries.splice(i);
-    }
+
 }
 
 
