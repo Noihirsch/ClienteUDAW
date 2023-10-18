@@ -36,13 +36,15 @@ function newCountry(){
     let newCountry = prompt("1. Al principio 2. Al final")
     newCountry = prompt("Nombre del país:");
     newCountry.toLowerCase();
-    if (newCountry != null && !countries.includes(newCountry)) {
-        countries.push(newCountry);
-        showCountries();
-        countCountries();
-        console.log("Se ha añadido" + newCountry);
-    }
-    
+    switch (newCountry) {
+        case "1":
+            let i = prompt("Inserte la posición en el array");
+            i = parseInt(i);
+            countries.splice(i, 1);
+            showCountries();
+            countCountries();
+            console.log("Se ha borrado " + deleteCountry);
+            break;
     else console.log("No se ha podido añadir el país");
 
 }
