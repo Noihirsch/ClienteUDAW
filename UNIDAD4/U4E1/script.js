@@ -34,20 +34,33 @@ function showCountries(){
 }
 function newCountry(){
     let newCountry = prompt("1. Al principio 2. Al final")
-    newCountry = prompt("Nombre del país:");
-    newCountry.toLowerCase();
     switch (newCountry) {
         case "1":
-            let i = prompt("Inserte la posición en el array");
-            i = parseInt(i);
-            countries.splice(i, 1);
-            showCountries();
-            countCountries();
-            console.log("Se ha borrado " + deleteCountry);
+            let country = prompt("Nombre del país:");
+            country.toLowerCase();
+            if (countries.includes(country) === false){
+                countries.unshift(country);
+                showCountries();
+                countCountries();
+                console.log("Se ha añadido " + country + " al principio");
+            }
             break;
-    else console.log("No se ha podido añadir el país");
-
+        case "2":
+            country = prompt("Nombre del país:");
+            country.toLowerCase();
+            if (countries.includes(country) === false){
+                countries.push(newCountry);
+                showCountries();
+                countCountries();
+                console.log("Se ha añadido " + country + " al finals");
+            }
+            else console.log("Opción inválida");
+            break;
+        default: 
+            console.log("Opción inválida");
+    }
 }
+
 
 function deleteCountry(){
     let deleteCountry = prompt("1. Por posición 2. Por nombre");
