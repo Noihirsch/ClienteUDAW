@@ -5,7 +5,13 @@
 // Añadir un país (y le preguntará si quiere añadir al principio o al final).
 // Borrar un país (y le preguntará si quiere borrar al principio o al final).
 // Consultar un país (y le preguntará si quiere consultar por posición o por nombre).
+
+import * as arrays from './arrays.js';
+
+
 let countries = ["españa", "alemania", "italia", "portugal"];
+
+
 function countCountries() {
     let value = countries.length;
     console.log(value);

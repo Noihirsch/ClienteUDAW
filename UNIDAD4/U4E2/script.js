@@ -22,9 +22,7 @@ function howManyDniHaveChar(){
             for (let c = 1; c <= 9; c++) {
                 dni.push([a, b, c]);
                 val = (a + b +c) / 23;
-                parseInt(val);
-                let pos = dniChars.indexOf(char);
-                if ( val == pos){
+                if (parseInt(val) === dniChars.indexOf(char)){
                     console.log(dni);
                 }
             }
