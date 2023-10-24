@@ -18,6 +18,7 @@ class Cliente {
         this.cuota = cuota;
     }
 }
+//NOTA NO FUNCIONAN LAS FUNCIONES CUANDO SE HACE IMPORT
 
     let c1 = new Cliente('Laura', 'Santander', 50);
     let c2 = new Cliente('Alvaro', 'Castro', 50);
@@ -40,8 +41,6 @@ class Cliente {
       
 function searchByProvincia() {
     let provincia = document.getElementById('provId').value;
-    // You can use `provincia` to filter or search the misClientes array.
-    // For example, you can use the filter method to find clients from a specific province.
     let filteredClients = misClientes.filter(cliente => cliente.localidad === provincia);
     if (filteredClients) {
         const tableBody = document.querySelector("#tabla tbody");
@@ -53,8 +52,6 @@ function searchByProvincia() {
 
   function searchByCuota() {
     let cuota = document.getElementById('cuotaId').value;
-    // You can use `provincia` to filter or search the misClientes array.
-    // For example, you can use the filter method to find clients from a specific province.
     let filteredClients = misClientes.filter(cliente => cliente.cuota > cuota);
     if (filteredClients) {
         const tableBody = document.querySelector("#tabla tbody");
@@ -65,6 +62,5 @@ function searchByProvincia() {
   }
 
   document.addEventListener("DOMContentLoaded", function() {
-    // Your JavaScript code here
-    showAllClients(); // Call your function after the DOM is loaded
+    showAllClients(); 
   });
