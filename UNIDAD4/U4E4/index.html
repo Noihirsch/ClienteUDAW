@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Ejercicio 4</title>
-    <script src="disco.js" type="module"></script>
+    <script type="module" src="disco.js"></script>
     <script src="script.js" type="module"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
-
+    
 </head>
 <style>
   #tabla { 
@@ -19,9 +19,9 @@
             <h1 class="display-3">Lista de Discos</h1>
             Bienvenido! ¿Qué deseas hacer hoy?
             <br>
-            <button onclick="countDiscos()">Contar discos</button>
-            <button onclick="displayTablaDiscos()">Ver todos mis discos</button>
-            <button onclick="disksInBetween()">Contar por intervalo</button>
+            <button type="button" onclick="Disco.countDiscos()">Contar discos</button>
+            <div id="countres"></div>
+            <button onclick="window.Disco.showInfo">Click Me</button>            <button onclick="disksInBetween()">Contar por intervalo</button>
             <button onclick="addDisco()">Añadir disco</button>
             <button onclick="deleteDisco()">Borrar disco</button>
             <button onclick="showInfo()">Consultar disco</button>
