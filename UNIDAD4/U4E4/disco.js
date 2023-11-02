@@ -1,4 +1,4 @@
-     class Disco {
+    class Disco {
     constructor(nombre, interprete, anyo, genero, localizacion = 0, prestado = false, caratula = 'imagen.png') {
         this.nombre = nombre;
         this.interprete = interprete;
