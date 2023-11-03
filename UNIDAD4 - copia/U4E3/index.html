@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <script src="script.js"></script>
+
+</head>
+<body>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+<div class="container">
+    <h1 class="display-3">Lista de clientes</h1>
+    <button type="submit" onclick="showAllClients()">Mostrar todos</button>
+    <table class ="table table-danger table-striped-white" id="tabla">
+      <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Provincia</th>
+          <th scope="col">Cuota</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="padding-left: 20%">
+  <input type="text" name="provincia" id="provId" placeholder="Buscar por provincia">
+  <button type="submit" onclick="searchByProvincia()">Buscar</button>
+</div>
+
+<div style="padding-left: 20%">
+    <input type="text" name="cuota" id="cuotaId" placeholder="Buscar por cuota">
+    <button type="submit" onclick="searchByCuota()">Buscar</button>
+  </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+body{
+    background-color:rgb(116, 230, 196);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
+}
+
+h1 {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    padding-left: 43%; /* Adjust the padding as needed */
+    padding-top: 4%;
+}
