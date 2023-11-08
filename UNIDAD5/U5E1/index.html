@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <script type="text/javascript">
+        var info = document.getElementById('info');
+
+        // Creating function that will tell the position of cursor
+        // PageX and PageY will getting position values and show them in P
+        function tellPos(p){
+          info.innerHTML = 'Position X : ' + p.pageX + '<br />Position Y : ' + p.pageY;
+        }
+        addEventListener('mousemove', tellPos, false);
+    </script>
+    
+</head>
+<body>
+<div id='info'></div>
+</body>
+
+</div>
+</body>
+</html>
+
