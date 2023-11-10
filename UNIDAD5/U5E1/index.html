@@ -4,23 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 1</title>
-    <script type="text/javascript">
-        var info = document.getElementById('info');
-
-        // Creating function that will tell the position of cursor
-        // PageX and PageY will getting position values and show them in P
-        function tellPos(p){
-          info.innerHTML = 'Position X : ' + p.pageX + '<br />Position Y : ' + p.pageY;
+    <style> 
+        body {
+            height: 100%;
+            margin: 0; 
+            background-color: rgb(148, 247, 247);
+            font-family:'Courier New', Courier, monospace;
+            font-size: 30px;
         }
-        addEventListener('mousemove', tellPos, false);
-    </script>
-    
+        .info { 
+            min-height: 100vh; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .data {
+            text-align: center;
+        }
+    </style>
 </head>
-<body>
-<div id='info'></div>
-</body>
+<body onmousemove="tellPos(event)">
 
-</div>
+
+    <div class="info">
+        <div class="data"></div>
+    </div>
+
+    <script type="text/javascript">
+        function tellPos(event) {
+            let data = 'Datos del ratón<br />X: ' + event.pageX + '<br />Y: ' + event.pageY;
+            document.querySelector('.data').innerHTML = data;
+        }
+    </script>
 </body>
 </html>
-
