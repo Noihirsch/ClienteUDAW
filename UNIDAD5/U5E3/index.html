@@ -5,15 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 3</title>
 </head>
-
 <body>
-<input type="text" name="nif" id="nif" placeholder="Nombre">
-<input type="text" name="letra" id="letra" placeholder="Letra">
+    <input type="text" name="nif" id="nif" placeholder="NIF/DNI">
+    <input type="text" name="letra" id="letra" placeholder="Letra">
+
+    <script> 
+        addEventListener("input", (event) => {});
+
+        oninput = calcularLetra => {};
+
+        
+            let input = document.querySelector("nif");
+            let letra = document.getElementById("letra");
+            let total = 0;
+            let dniChars = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];
+            
+            input.addEventListener("input", calcularLetra);
+
+            function calcularLetra() {
+                total = 0;
+                for (let i = 0; i < digits.value.length; i++) {
+                    total += parseInt(digits.value[i]);
+                }
+                let p = total % 23;
+                letra.value = dniChars[p];
+            }
+    </script>
 </body>
-
-<script> 
-
-    innerhtml
-</script>
-
 </html>
+
