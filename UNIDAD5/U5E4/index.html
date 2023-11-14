@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <script type="text/javascript">
+        let orden1 = [10, 21, 30, 38, 42];
+        let data;
+
+        function sortByRealResults() {
+            data = orden1.slice(); // Create a copy of the array to avoid modifying the original
+            data.sort(function(a, b) {
+                return b - a; // Compare in descending order
+            });
+            console.log(data);
+            document.querySelector(data).innerHTML = data.join(', ');
+        }
+
+        sortByRealResults();
+    </script>
+</head>
+<body>
+
+    <h1> Ver por orden de aparición </h1>
+    <h1 id="mayormenor">Ver de mayor a menor</h1>
+    <span id="data"></span>
+
+</body>
+</html>

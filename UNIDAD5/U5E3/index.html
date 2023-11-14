@@ -9,28 +9,25 @@
     <input type="text" name="nif" id="nif" placeholder="NIF/DNI">
     <input type="text" name="letra" id="letra" placeholder="Letra">
 
-    <script> 
-        addEventListener("input", (event) => {});
-
-        oninput = calcularLetra => {};
-
+    <script>
+        let input = document.getElementById("nif");
+        let letra = document.getElementById("letra");
+        let isNie = false;
+        let dniChars = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];
         
-            let input = document.querySelector("nif");
-            let letra = document.getElementById("letra");
-            let total = 0;
-            let dniChars = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];
+        input.addEventListener("input", calcularLetra);
+        
+        function calcularLetra() {
+            if (input.value.includes("X")){input.value = input.replace("X", "0"); isNie = true}
+            if (input.value.includes("Y")){input.value = input.value.replace("Y", "1"); isNie =true;}
+            if (input.value.includes("Z")){input.value = input.value.replace("Z", "2"); isNie = true;}
             
-            input.addEventListener("input", calcularLetra);
-
-            function calcularLetra() {
-                total = 0;
-                for (let i = 0; i < digits.value.length; i++) {
-                    total += parseInt(digits.value[i]);
-                }
-                let p = total % 23;
-                letra.value = dniChars[p];
-            }
+            let p = parseInt(input.value) % 23;
+            letra.value = dniChars[p];
+           
+        }
+        
+        
     </script>
 </body>
 </html>
-
