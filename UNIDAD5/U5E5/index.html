@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+
+    <label for="nombreDisco">Nombre del Disco:</label>
+        <input type="text" id="nombreDisco" name="nombreDisco" required>
+
+        <label for="grupoMusical">Grupo de Música o Cantante:</label>
+        <input type="text" id="grupoMusical" name="grupoMusical" required>
+
+        <label for="anoPublicacion">Año de Publicación:</label>
+        <input type="number" id="anoPublicacion" name="anoPublicacion" min="1900" max="2023" required>
+
+        <label for="tipoMusica">Tipo de Música:</label>
+        <select id="tipoMusica" name="tipoMusica" required>
+            <option value="rock">Rock</option>
+            <option value="pop">Pop</option>
+            <option value="punk">Punk</option>
+            <option value="indie">Indie</option>
+        </select>
+
+        <label for="localizacion">Localización (Número de estantería):</label>
+        <input type="text" id="localizacion" name="localizacion" required>
+
+        <label for="prestado">Prestado:</label>
+        <input type="checkbox" id="prestado" name="prestado">
+
+        <button type="submit">Guardar Información</button>
+
+    </form>
+
+    <script>
+        document.getElementById("formularioDiscos").addEventListener("submit", function(event) {
+            event.preventDefault();
+            // Aquí puedes agregar la lógica para manejar los datos del formulario
+            // por ejemplo, puedes obtener los valores usando document.getElementById y luego realizar acciones con ellos.
+        });
+    </script>
+    
+</body>
+</html>
