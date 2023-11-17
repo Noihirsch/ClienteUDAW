@@ -4,27 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 4</title>
-    <script type="text/javascript">
-        let orden1 = [10, 21, 30, 38, 42];
-        let data;
-
-        function sortByRealResults() {
-            data = orden1.slice(); // Create a copy of the array to avoid modifying the original
-            data.sort(function(a, b) {
-                return b - a; // Compare in descending order
-            });
-            console.log(data);
-            document.querySelector(data).innerHTML = data.join(', ');
+    <style>
+        .circulos {
+            display: flex;
         }
 
-        sortByRealResults();
-    </script>
+        .circulo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: rgb(240, 231, 152);
+            margin: 5px;
+            font-size: 40px;
+        }
+    </style>
 </head>
 <body>
+    <div class="hola"><h1>Ver por orden de aparición</h1></div>
+    <div class="circulos">
+        <div class="circulo"></div>
+        <div class="circulo"></div>
+        <div class="circulo"></div>
+        <div class="circulo"></div>
+        <div class="circulo"></div>
+    </div>
 
-    <h1> Ver por orden de aparición </h1>
-    <h1 id="mayormenor">Ver de mayor a menor</h1>
-    <span id="data"></span>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            let resultados = [30, 40, 12, 38, 22];
+            let resOrdenados = Array.from(resultados);
 
+            function showLowestToHighest() {
+                resOrdenados.sort(function (a, b) {
+                    return a - b;
+                });
+
+                for (let i = 0; i < resOrdenados.length; i++) {
+                    let circle = document.getElementsByClassName('circulo')[i];
+                    circle.innerHTML = `<span>${resOrdenados[i]}</span>`;
+                }
+            }
+
+            function showRealOrder() {
+                for (let i = 0; i < resultados.length; i++) {
+                    let circle = document.getElementsByClassName('circulo')[i];
+                    circle.innerHTML = `<span>${resultados[i]}</span>`;
+                }
+            }
+
+            showLowestToHighest();
+            document.querySelector('.circulos').addEventListener('mouseover', showRealOrder);
+            document.querySelector('.circulos').addEventListener('mouseout', showLowestToHighest);
+
+        });
+    </script>
 </body>
 </html>
