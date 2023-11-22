@@ -8,12 +8,30 @@ function validaNombreEInterprete() {
     var interprete = document.getElementById("interprete");
     limpiarError(nombre);
     if (nombre.value == "" || interprete.value=="") {
+        while (nombre.value =="") {
+            nombre.style.border = '3px solid';
+            nombre.style.borderColor = 'red';
+        }
+        while (interprete.value=="") {
+            interprete.style.border = '3px solid';
+            interprete.style.borderColor = 'red';
+        }
         alert("El campo no puede ser vacío");
         error(nombre);
         return false;
+        
     }
 
+
     if (nombre.value.length>=20 ||interprete.value.length>=20 ){
+        if (nombre.value.length>=20) {
+            nombre.style.border = '3px solid';
+            nombre.style.borderColor = 'red';
+        }
+        if (interprete.value.length>=20 ) {
+            interprete.style.border = '3px solid';
+            interprete.style.borderColor = 'red';
+        }
         alert("El campo tiene un nombre muy largo.");
         error(nombre);
         return false;
