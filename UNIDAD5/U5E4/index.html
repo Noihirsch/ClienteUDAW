@@ -20,10 +20,15 @@
             margin: 5px;
             font-size: 40px;
         }
+
+        .aparicion.hide {
+            display: none;
+        }
     </style>
 </head>
 <body>
-    <div class="hola"><h1>Ver por orden de aparición</h1></div>
+    <div id="aparicion"><h1>Ver por orden de aparición</h1></div>
+    
     <div class="circulos">
         <div class="circulo"></div>
         <div class="circulo"></div>
@@ -38,6 +43,7 @@
             let resOrdenados = Array.from(resultados);
 
             function showLowestToHighest() {
+                document.getElementById('aparicion').innerHTML = "<h1>Mostrar orden real</h1>";
                 resOrdenados.sort(function (a, b) {
                     return a - b;
                 });
@@ -49,16 +55,18 @@
             }
 
             function showRealOrder() {
+                document.getElementById('aparicion').innerHTML = "<h1>Mostrar de menor a mayor</h1>";
                 for (let i = 0; i < resultados.length; i++) {
                     let circle = document.getElementsByClassName('circulo')[i];
                     circle.innerHTML = `<span>${resultados[i]}</span>`;
                 }
             }
 
-            showLowestToHighest();
-            document.querySelector('.circulos').addEventListener('mouseover', showRealOrder);
-            document.querySelector('.circulos').addEventListener('mouseout', showLowestToHighest);
-
+            let circulos = document.querySelector('.circulos');
+            circulos.addEventListener('mouseover', showRealOrder);
+            circulos.addEventListener('mouseout', showLowestToHighest);
+            
+            showLowestToHighest(); // Initial state
         });
     </script>
 </body>
