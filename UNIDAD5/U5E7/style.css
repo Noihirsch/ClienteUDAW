@@ -3,12 +3,13 @@
 body
 {
     background-color:rgb(253, 185, 197);
+    
 }
 #titulo
 {
     font-family: Pacifico;
     color: #5a3c3c;
-    font-size: 30px;
+    font-size: 30em;
     text-align: center;
 }
 
@@ -22,5 +23,13 @@ body
 
 #logo
 {
-    width: 10%;
+    width: 5%;
+}
+
+#empleadoFormulario
+{
+    margin-left: 35%;
+    width: 15%;
+    background-color: white;
+    padding:10%
 }
