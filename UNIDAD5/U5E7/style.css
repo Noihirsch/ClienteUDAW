@@ -33,3 +33,15 @@ body
     background-color: white;
     padding:10%
 }
+
+.checkmark 
+{
+    color:green;
+}
+
+.divider {
+    width: 200px;
+    height: 1px;
+    background-color: #d4d4d4;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

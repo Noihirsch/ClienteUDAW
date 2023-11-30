@@ -1,0 +1,215 @@
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=Pacifico&display=swap');
+
+
+* 
+{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+
+.logo 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img 
+{
+
+    width: 200px;
+    height: 100px;
+    margin-top: 15px;
+}
+
+.logo span {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.card 
+{
+    width: 296px;
+    height:500px;
+    padding: 20px 26px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 20px auto 25px auto;
+
+
+}
+
+.form-control
+ {
+    font-family: system-ui, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.1;
+}
+.card h1{
+    font-weight: 400;
+    font-size: 22px;
+    padding-top: 10%;
+    padding-bottom: 7%;
+}
+
+.card label {
+    font-size:13px;
+    padding-left: 2px;
+    padding-bottom: 2px;
+    font-weight: 700;
+}
+
+.card input 
+{
+    width: 272px;
+    height: 25px;
+    padding: 3px 7px;
+    margin-top: 3px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 3%;
+
+}
+
+.card button {
+    width: 288px;
+    height: 31px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    background-color: #fc6605;
+    border: 1px solid #fc6605;
+    border-top-color: #fc6605;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Add a light shadow */
+}
+
+.card p, .card p a{
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+a
+{
+    text-decoration: none;
+    color: #0066c0;
+}
+
+.card a{
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.icon::before{
+    display: inline-block;
+    content: "";
+    border-top: 4px solid transparent;
+    border-left: 4px solid #949494;
+    border-bottom: 4px solid transparent;
+    margin-right: 10px;
+
+}
+
+.breck p
+{
+    line-height: 1;
+   font-size: 12px;
+   columns:  #767676;
+   font-weight: 400;
+   position: relative;
+   display: inline-block;
+   background-color: #fff;
+   padding: 0 8px 0 7px;
+}
+
+.breck, .btn 
+{
+    display: flex;
+    justify-content: center;
+}
+
+.breck::before, .breck::after
+{
+    content: "";
+    position: relative;
+    top: 5px;
+    display: inline-block;
+    width: 120px;
+    border-top: 1px solid #e7e7e7;
+
+}
+
+.btn button {
+    width: 348px;
+    height: 31px;
+    margin: 15px auto;
+    background-color: #e7e9ec;
+    background-image: linear-gradient(#f9f9f9, #e7e9ec);
+    border: 1px solid #a6a6a6;
+    border-top-color: #949494;
+    border-radius: 3px;
+}   
+
+links
+{
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    margin: 25px auto 15px auto;
+}
+
+.links a
+{
+    font-size: 15px;
+    inline-size:5%;
+}
+
+footer::before 
+{
+    content:"";
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+    height: 44px;
+    margin-top: -35px;
+    border-top: 1px solid transparent;
+    box-shadow: 0 10px 15px -20px #333;
+}
+
+footer p 
+{
+    font-size: 11px;
+    color: #555;
+    text-align: center;
+}
+
+label {
+    font-size: 4px;
+}
+
+#doctype input,
+#doctype label {
+    font-size: 7px; 
+}
+
+input[type=radio] {
+    border: 0px;
+    width: 100%;
+    height: 2em;
+}
+input[type=checkbox] {
+    border: 0px;
+    width: 5dvh;
+
+}
