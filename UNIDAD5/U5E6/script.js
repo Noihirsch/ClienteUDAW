@@ -1,38 +1,48 @@
 
 const todasLasCartas = document.querySelector('.todasLasCartas');
 
-const mazo = [
-  "image1.png",
-  "image2.png",
-  "image3.png",
-  "image4.png",
-  "image5.png",
-  "image6.png",
-  "image1.png",
-  "image2.png",
-  "image3.png",
-  "image4.png",
-  "image5.png",
-  "image6.png"
-];
-const par2 = [
+const mazo = [];
+cardIsFlipped= false;
 
-];
+mazo[0] = new Image();
+mazo[0].src = 'img1.png';
 
-    function startNewGame(){
-        generateRandomOrder(mazo);
+mazo[1] = new Image();
+mazo[1].src = 'img2.png';
 
-        for(let i=0; i < mazo.length; i++){
-        let carta = document.createElement('carta');
-        carta.innerHTML = mazo[i];
-        todasLasCartas.appendChild(carta);
+mazo[2] = new Image();
+mazo[2].src = 'img3.png';
+
+mazo[3] = new Image();
+mazo[3].src = 'img4.png';
+
+mazo[4] = new Image();
+mazo[4].src = 'img5.png';
+
+mazo[5] = new Image();
+mazo[5].src = 'img6.png';
+
+
+function startNewGame() {
+  generateRandomOrder(mazo);
+  for (let i = 0; i < mazo.length; i++) {
+      let carta = document.createElement('carta');
+      carta.src = mazo[i].src; 
+      carta.classList.add('reverso')
+      todasLasCartas.appendChild(carta);
+  }
 }
-    }
+
+  function flip(){
+    this.class.toggle('flip');
+
+    cardIsFlipped = true;
+
+  }
 
     function generateRandomOrder(array) {
       for (let i = 0; i < array.length; i++) {
         const j = Math.floor(Math.random() * (i + 1));
-        // Array Destructuring Assignment. Good to swap values on arraylists without cloning them w an auxiliary variable.
         [array[i], array[j]] = [array[j], array[i]];
         
       }
@@ -41,6 +51,6 @@ const par2 = [
       
     }
 
-
+startNewGame();
 
 
