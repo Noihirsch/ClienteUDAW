@@ -3,6 +3,7 @@
 body
 {
     background-color:rgb(253, 185, 197);
+    font-family: Pacifico;
     
 }
 #titulo
@@ -29,7 +30,8 @@ body
 #empleadoFormulario
 {
     margin-left: 35%;
-    width: 15%;
+    width: 20%;
     background-color: white;
-    padding:10%
+    padding: 5%;
+    border-radius: 10px;
 }

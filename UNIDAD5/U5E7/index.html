@@ -1,49 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 7</title>
-    <link rel="stylesheet" type="text/css" href="style.css"></head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><body>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+</head>
 
-<did id="empresa"><img id="logo" src="logo.png">Pastelería El Gusto</did>
+<body>
 
-<div id="titulo"><h1> Dar de alta </h1></div>
-<form action="procesar.php" method="post" id="empleadoFormulario">
+    <div id="empresa">
+        <img id="logo" src="logo.png">
+        Correos EspaÃ±a
+    </div>
 
-<!-- fecha de creación -->
-    <label>
-    Inserte la fecha de creación<br>
-        <input type="date" name="fecha" />
-    </label>
-    <br>
+    <form action="procesar.php" method="post" id="Formulario
+    ">
+        <h1 class="titulo"> Formulario de envÃ­os </h1>
 
-<!-- empleado -->
-    <label>
-        Inserte el código de empleado. <br>
-        <input type="text" name="employee" />
-    </label>
-    <br>
-<!-- destinatario -->
-<label>
-    Destinatario:<br>
-    <input type="text" name="employee" />
-</label>
-<br>
+        <label>
+            Inserte la fecha de creacion<br>
+            <input type="date" name="fecha" />
+        </label>
+        <br>
 
-<!-- peso en gramos -->
-<label>
-    Destinatario:<br>
-    <input type="text" name="employee" />
-</label>
-<br>
-<!-- numero de cuenta -->
+        <label>
+            Inserte el cÃ³digo de empleado. <br>
+            <input type="text" name="codigoEmpleado" />
+        </label>
+        <br>
 
-<div>
-</form>
-    
-</div>
-    
+        <label>
+            Destinatario:<br>
+            <input type="text" name="destinatario" />
+        </label>
+        <br>
+
+        <label>
+            Peso en gramos:<br>
+            <input type="text" name="pesoGramos" />
+        </label>
+        <br>
+
+        <label>
+            NÃºmero de cuenta:<br>
+            <input type="text" name="numeroCuenta" />
+        </label>
+        <br>
+
+        <div>
+            <button type="submit" id="enviar">Dar de alta</button>
+        </div>
+
+    </form>
+
 </body>
+
 </html>
