@@ -3,25 +3,28 @@ body {
     padding: 0;
 }
 
-h1 {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    text-align: center;
-}
-
 .todasLasCartas {
     display: flex;
     flex-wrap: wrap;
     width: 90%;
     padding-left: 5%;
 }
-
-#carta {
+h1 
+{
+    align-items: center;
+}
+.carta{
     box-sizing: border-box; 
     width: 170px; 
     height: 250px;
     background-color: greenyellow; 
     margin: 2%;  
     border:  5px solid;
+}
+
+.reverso{
+    width: 160px; 
+    height: 245px;
 }
 
 .chiquita 
