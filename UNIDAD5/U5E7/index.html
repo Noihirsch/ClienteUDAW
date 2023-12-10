@@ -1,61 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 7</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <div id="empresa">
-        <img id="logo" src="logo.png">
-        Correos España
+    <div class="logo">
+        <img src="https://brandemia.org/sites/default/files/inline/images/portada_correos_2.jpg" alt="Logo">
     </div>
 
-    <form action="procesar.php" method="post" id="Formulario
-    ">
-        <h1 class="titulo"> Formulario de envíos </h1>
+    <h1>Formulario envíos</h1>
 
-        <label>
-            Inserte la fecha de creacion<br>
-            <input type="date" name="fecha" />
-        </label>
+    <form action="procesar.php" method="post" id="formulario">
+        <label for="fecha">Fecha de Creación:</label>
+        <input type="date" id="fecha" name="fecha" required/>
         <br>
-
-        <label>
-            Inserte el código de empleado. <br>
-            <input type="text" name="codigoEmpleado" />
-        </label>
+        <label for="codigoEmpleado">Código de empleado:</label>
+        <input type="text" name="codigoEmpleado" id="codigoEmpleado" required/>
         <br>
-
-        <label>
-            Destinatario:<br>
-            <input type="text" name="destinatario" />
-        </label>
+        <label for="destinatario">Destinatario:</label>
+        <input type="text" name="destinatario" id="destinatario" required/>
         <br>
-
-        <label>
-            Peso en gramos:<br>
-            <input type="text" name="pesoGramos" />
-        </label>
+        <label for="peso">Peso en gramos:</label>
+        <input type="text" name="peso" id="peso" required/>
         <br>
-
-        <label>
-            Número de cuenta:<br>
-            <input type="text" name="numeroCuenta" />
-        </label>
+        <label for="cuenta">Número de cuenta:</label>
+        <input type="text" name="cuenta" id="cuenta" required/>
         <br>
-
-        <div>
-            <button type="submit" id="enviar">Dar de alta</button>
-        </div>
-
+        <p>
+            <input type="submit" value="Enviar" id="enviar" />
+            <input type="reset" value="Borrar" id="borrar" />
+        </p>
     </form>
 
 </body>
-
 </html>

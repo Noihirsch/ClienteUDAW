@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(238, 175, 240);
+}
+
+.todasLasCartas {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    padding-left: 5%;
+    perspective: 1000px;
+}
+
+#empezar
+{
+    margin-left:47%;
+}
+
+h1 
+{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(180, 9, 143);
+}
+
+.carta{
+    box-sizing: border-box; 
+    width: 170px; 
+    height: 250px;
+    background-color:  rgb(149, 85, 151); 
+    margin: 2%;  
+    border-radius: 10px;
+    border:  5px solid  rgb(149, 85, 151);
+    display:block;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+
+.reverso.girar {
+    transform: rotateY(180deg);
+  }
+
+
+.reverso {
+    width: 100px;
+    height: 100px;
+    padding-left: 15%;
+    padding-top: 40%;
+}

@@ -7,31 +7,28 @@ function enviar() {
 
 function validaFecha() {
     const regexDMA = /^(0[1-9]|[12][0-9]|3[01])-(0[1-9]|1[0-2])-\d{4}$/;
-    let fecha = document.getElementById("fecha");
+    let elemento = document.getElementById("creationDate"); // Corrected variable name
 
-    //SI ESTÁ VACÍA
+    // SI ESTÁ VACÍA
     if (!elemento.checkValidity()) {
         if (elemento.validity.valueMissing) {
-          error(elemento);
-          alert("La fecha está vacía");
-          return false;
+            error(elemento);
+            alert("La fecha está vacía");
+            return false;
         }
-    //SI NO VIENE EN EL FORMATO CORRECTO
-    if (!fecha.matches(regexDMA)){
-        error(elemento);
-        alert("El formato de fecha no es el adecuado.")
-        return false;
-    }
-
+        if (!elemento.value.match(regexDMA)) {
+            error(elemento);
+            alert("El formato de fecha no es el adecuado.");
+            return false;
+        }
     }
     return true;
 }
 
 function validaCodigoEmpleado() {
     let elemento = document.getElementById("codigoEmpleado");
-    let patronCodigo = /^[A-Z]{2}[^A-Za-z0-9][0-9]{4}$/;
-
-    if (patronCodigo.test(elemento)) {
+    let patronCodigo = /^[A-Z]{2}[^A-Za-z0-9]{1}[0-9]{4}$/;
+    if (patronCodigo.test(elemento.value)) {
         console.log("Valid empleado name");
         return true;
     } else {
@@ -41,24 +38,26 @@ function validaCodigoEmpleado() {
     }
 }
 
-function validaDestinatario (){
+
+function validaDestinatario() {
     let elemento = document.getElementById("destinatario");
     let patronDestinatario = /^[A-Z]{2,3}_[A-Za-z]+:[0-9]{4}$/;
 
     if (!elemento.checkValidity()) {
         if (elemento.validity.valueMissing) {
-          error(elemento);
-          alert("El destinatario está vacío");
-          return false;
+            error(elemento);
+            alert("El destinatario está vacío");
+            return false;
         }
 
-    if (patronDestinatario.test(elemento)) {
-        alert("Invalid destinatario name");
-        error(elemento);
-        return false;
-        
+        if (!patronDestinatario.test(elemento.value)) {
+            alert("Invalid destinatario name");
+            error(elemento);
+            return false;
+        } else {
+            return true; // Added return true; here
+        }
     }
-}
 }
 
 function validaPeso() {
@@ -74,29 +73,26 @@ function validaPeso() {
     
 
 
-
-function validaCuenta() {
-    var elemento = document.getElementById("iban");
-    let patronIban = /^[A-Z]{2}[0-9A-Za-z]{18}\d{20}$/;                                                                                                                                                                                                                                                                                                                                                                                                              = /^[A-Z]{2}[0-9A-Za-z]{18}\d{20}$/;
-
-    if (patronIban.test(elemento)) {
+    function validaCuenta() {
+        var elemento = document.getElementById("cuenta");
+        let patronIban = /^[A-Z]{2}[0-9A-Za-z]{18}\d{20}$/;
+    
+        if (patronIban.test(elemento.value)) {
             console.log("No validado");
             error(elemento);
-        return false;
-    }
-    return true;
-}
-
-
-function validar(e) {
-    if (validaNombre() && validaTelefono() && validaFecha() && validaCheck() && confirm("Pulsa aceptar si deseas enviar el formulario")) {
+            return false;
+        }
         return true;
-    } else {
-        e.preventDefault();
-        return false;
     }
-}
-
+    
+    function validar(e) {
+        if (validaFecha() && validaCodigoEmpleado() && validaDestinatario() && validaPeso() && validaCuenta() && confirm("Pulsa aceptar si deseas enviar el formulario")) {
+            return true;
+        } else {
+            e.preventDefault();
+            return false;
+        }
+    }
 
 function error(elemento) {
     elemento.className = "error";

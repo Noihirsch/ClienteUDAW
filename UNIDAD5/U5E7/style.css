@@ -2,46 +2,23 @@
 
 body
 {
-    background-color:rgb(253, 185, 197);
+    background-color:#ffd304;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    line-height: 3;
+}
+div.logo img
+{
+    height: 150px;
+    padding-left: 45%;
     
 }
-#titulo
+
+#formulario
 {
-    font-family: Pacifico;
-    color: #5a3c3c;
-    font-size: 30em;
-    text-align: center;
+    padding-left: 45%;
 }
 
-#empresa
+h1
 {
-    font-family: Pacifico;
-    color: #5a3c3c;
-    font-size: 30px;
-    text-align: center;
-}
-
-#logo
-{
-    width: 5%;
-}
-
-#empleadoFormulario
-{
-    margin-left: 35%;
-    width: 15%;
-    background-color: white;
-    padding:10%
-}
-
-.checkmark 
-{
-    color:green;
-}
-
-.divider {
-    width: 200px;
-    height: 1px;
-    background-color: #d4d4d4;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding-left: 45%;
 }
