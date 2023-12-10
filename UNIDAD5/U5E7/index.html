@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,33 +9,20 @@
 </head>
 <body>
 
-    <div class="logo">
-        <img src="https://brandemia.org/sites/default/files/inline/images/portada_correos_2.jpg" alt="Logo">
-    </div>
+    <section>
+        <img id="logo" src="logo.jpg">
+        <div class="form-register">
+            <h3>Formulario de envíos</h3>
+            <input type="date" name="fecha" id="fecha" placeholder="Fecha de creación"><br>
+            <input type="text" name="empleado" id="empleado" placeholder="Código de empleado"><br>
+            <input type="text" name="destinatario" id="destinatario" placeholder="Destinatario"><br>
+            <input type="text" name="peso" id="peso" placeholder="Peso en gramos"><br>
+            <input type="text" name="cuenta" id="cuenta" placeholder="Número de cuenta"><br>
+            <input id="enviar" type="button" value="Registrar">
+        </div>
+    </section> 
 
-    <h1>Formulario envíos</h1>
-
-    <form action="procesar.php" method="post" id="formulario">
-        <label for="fecha">Fecha de Creación:</label>
-        <input type="date" id="fecha" name="fecha" required/>
-        <br>
-        <label for="codigoEmpleado">Código de empleado:</label>
-        <input type="text" name="codigoEmpleado" id="codigoEmpleado" required/>
-        <br>
-        <label for="destinatario">Destinatario:</label>
-        <input type="text" name="destinatario" id="destinatario" required/>
-        <br>
-        <label for="peso">Peso en gramos:</label>
-        <input type="text" name="peso" id="peso" required/>
-        <br>
-        <label for="cuenta">Número de cuenta:</label>
-        <input type="text" name="cuenta" id="cuenta" required/>
-        <br>
-        <p>
-            <input type="submit" value="Enviar" id="enviar" />
-            <input type="reset" value="Borrar" id="borrar" />
-        </p>
-    </form>
+    <script  src="script.js"></script>
 
 </body>
 </html>
