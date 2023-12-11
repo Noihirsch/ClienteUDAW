@@ -1,61 +1,28 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 7</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <div id="empresa">
-        <img id="logo" src="logo.png">
-        Correos España
-    </div>
-
-    <form action="procesar.php" method="post" id="Formulario
-    ">
-        <h1 class="titulo"> Formulario de envíos </h1>
-
-        <label>
-            Inserte la fecha de creacion<br>
-            <input type="date" name="fecha" />
-        </label>
-        <br>
-
-        <label>
-            Inserte el código de empleado. <br>
-            <input type="text" name="codigoEmpleado" />
-        </label>
-        <br>
-
-        <label>
-            Destinatario:<br>
-            <input type="text" name="destinatario" />
-        </label>
-        <br>
-
-        <label>
-            Peso en gramos:<br>
-            <input type="text" name="pesoGramos" />
-        </label>
-        <br>
-
-        <label>
-            Número de cuenta:<br>
-            <input type="text" name="numeroCuenta" />
-        </label>
-        <br>
-
-        <div>
-            <button type="submit" id="enviar">Dar de alta</button>
+    <section>
+        <img id="logo" src="logo.jpg">
+        <div class="form-register">
+            <h3>Formulario de envíos</h3>
+            <input type="date" name="fecha" id="fecha" placeholder="Fecha de creación"><br>
+            <input type="text" name="empleado" id="empleado" placeholder="Código de empleado"><br>
+            <input type="text" name="destinatario" id="destinatario" placeholder="Destinatario"><br>
+            <input type="text" name="peso" id="peso" placeholder="Peso en gramos"><br>
+            <input type="text" name="cuenta" id="cuenta" placeholder="Número de cuenta"><br>
+            <input id="enviar" type="button" value="Registrar">
         </div>
+    </section> 
 
-    </form>
+    <script  src="script.js"></script>
 
 </body>
-
 </html>
