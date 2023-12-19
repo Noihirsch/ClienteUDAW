@@ -3,47 +3,114 @@
 //NOMBRES Y APELLIDOS ROJO SI MAL
 
 // Create form
-var form = document.createElement('form');
+window.onload = iniciar;
+
+function iniciar() {
+    document.getElementById("enviar").addEventListener('click', validar, false);
+}
+
+function validaNombre() {
+    var elemento = document.getElementById("nombre");
+    if (!elemento.checkValidity()) {
+        if (elemento.validity.valueMissing) {
+            error2(elemento, "Debe introducir un nombre")
+        }
+        if (elemento.validity.patternMismatch) {
+            error2(elemento, "El nombre no se corresponde con el patrón");
+        }
+        return false;
+    }
+    return true;
+}
+
+function validaApellido() {
+    var elemento = document.getElementById("apellido");
+    if (!elemento.checkValidity()) {
+        if (elemento.validity.valueMissing) {
+            error2(elemento, "Debe introducir un apellido")
+        }
+        if (elemento.validity.patternMismatch) {
+            error2(elemento, "El apellido no se corresponde con el patrón");
+        }
+        //error(elemento);
+        return false;
+    }
+    return true;
+}
 
 
-var inputNombre = document.createElement('input');
-inputNombre.type = 'text';
-inputNombre.name = 'nombre';
-inputNombre.placeholder = 'Nombre(s)';
+function validaApellido() {
+    var elemento = document.getElementById("nif");
+    if (!elemento.checkValidity()) {
+        if (elemento.validity.valueMissing) {
+            error2(elemento, "Debes introducir un NIF")
+        }
+        if (elemento.validity.patternMismatch) {
+            error2(elemento, "El NIF introducido no es válido");
+        }
+        //error(elemento);
+        return false;
+    }
+    return true;
+}
 
-var input = document.createElement('input');
-inputApellido.type = 'text';
-inputApellido.name = 'apellido';
-inputApellido.placeholder = 'Apellidos';
+
+function validaEmail() {
+    var elemento = document.getElementById("email");
+    if (!elemento.checkValidity()) {
+        if (elemento.validity.valueMissing) {
+            error2(elemento, "Debe introducir un email")
+        }
+        if (elemento.validity.patternMismatch) {
+            error2(elemento, "El NIF introducido no es válido");
+        }
 
 
-var inputNif = document.createElement('input');
-inputNif.type = 'text';
-inputNif.name = 'nif';
-inputNif.placeholder = 'NIF';
+        return false;
+    }
+    return true;
+}
 
-var inputEdad = document.createElement('input');
-inputEdad.type = 'numbers';
-inputEdad.name = 'edad';
-inputEdad.placeholder = 'Edad';
+function validaTelefono() {
+    var elemento = document.getElementById("telefono");
+    if (!elemento.checkValidity()) {
+        if (elemento.validity.valueMissing) {
+            error2(elemento, "Debe introducir un teléfono")
+        }
+        if (elemento.validity.patternMismatch) {
+            error2(elemento, "El telefono debe tener 9 numeros");
+        } 
+        return false;
+    }
+    return true;
+}
 
-var inputEmail = document.createElement('input');
-inputEmail.type = 'text';
-inputEmail.name = 'email';
-inputEmail.placeholder = 'Email';
+function validar(e) {
+    borrarError();
+    if (validaNombre() && validaEdad() && validaTelefono() && confirm("Pulsa aceptar si deseas enviar el formulario")) {
+        return true
+    } else {
+        e.preventDefault();
+        return false;
+    }
+}
 
-var inputProv = document.createElement('input');
-inputProv.type = 'text';
-inputProv.name = 'provincia';
-inputProv.placeholder = 'Provincia de residencia';
+function error(elemento) {
+    document.getElementById("mensajeError").innerHTML = elemento.validationMessage;
+    elemento.className = "error";
+    elemento.focus();
+}
 
-var buttonSubmit = document.createElement('input');
-buttonSubmit.type = 'submit';
-buttonSubmit.value = 'Submit';
+function error2(elemento, mensaje) {
+    document.getElementById("mensajeError").innerHTML = mensaje;
+    elemento.className = "error";
+    elemento.focus();
+}
 
-form.appendChild(inputNombre);
-form.appendChild(inputApellido);
-form.appendChild(inputEdad);
-form.appendChild(buttonSubmit);
+function borrarError() {
+    var formulario = document.forms[0];
+    for (var i = 0; i < formulario.elements.length; i++) {
+        formulario.elements[i].className = "";
+    }
+}
 
-document.body.appendChild(form);

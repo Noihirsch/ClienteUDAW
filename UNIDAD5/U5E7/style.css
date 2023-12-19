@@ -73,3 +73,10 @@
   {
     color: red;
 }
+
+#enviar:hover {
+  background-color:#5976c7;
+  cursor: pointer;
+
+
+}

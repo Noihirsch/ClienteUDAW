@@ -9,19 +9,22 @@
 </head>
 <body>
 
-    <section>
-        <img id="logo" src="logo.jpg">
-        <div class="form-register">
-            <h3>Formulario de envíos</h3>
-            <input type="date" name="fecha" id="fecha" placeholder="Fecha de creación"><br>
-            <input type="text" name="empleado" id="empleado" placeholder="Código de empleado"><br>
-            <input type="text" name="destinatario" id="destinatario" placeholder="Destinatario"><br>
-            <input type="text" name="peso" id="peso" placeholder="Peso en gramos"><br>
-            <input type="text" name="cuenta" id="cuenta" placeholder="Número de cuenta"><br>
-            <input id="enviar" type="button" value="Registrar">
-        </div>
-    </section> 
 
+        
+        <img id="logo" src="logo.jpg">
+            <div class="form-register">
+
+                <form action="procesar.php" method="post" id="formulario">
+                <h3>Formulario de envíos</h3>
+                <input type="date" name="fecha" id="fecha" placeholder="Fecha de creación" required><br>
+                <input type="text" name="empleado" id="empleado" placeholder="Código de empleado" required><br>
+                <input type="text" name="destinatario" id="destinatario" placeholder="Destinatario" required><br>
+                <input type="text" name="peso" id="peso" placeholder="Peso en gramos"required ><br>
+                <input type="text" name="cuenta" id="cuenta" placeholder="Número de cuenta"required ><br>
+                <input type="submit" value="Enviar" id="enviar"/>
+            </div>
+                <p id="mensajeError"></p>
+            </form>
     <script  src="script.js"></script>
 
 </body>

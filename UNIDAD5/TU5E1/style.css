@@ -2,3 +2,9 @@
 {
     border: solid 2px #FF0000;
 }
+
+form 
+{
+    justify-content: center;
+    text-align: center;
+}
