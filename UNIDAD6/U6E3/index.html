@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+
+</head>
+<script src="script.js"></script>
+<body>
+    
+    <label for="nombreDisco">Nombre del Disco:</label>
+    <form action="procesar.php" method="post" id="discoFormulario">
+        <input type="text" id="nombre" name="nombre" required>
+        <br>
+
+        <label for="interprete">interprete de Música o Cantante:</label>
+        <input type="text" id="interprete" name="interprete" required>
+        <br>
+
+        <label for="anyo">Año de Publicación:</label>
+        <input type="number" id="anyo" name="anyo" min="1900" max="2023" required>
+        <br>
+
+        <label for="genero">Género musical:</label>
+        <select id="genero" name="genero" required>
+            <option value="rock">Rock</option>
+            <option value="pop">Pop</option>
+            <option value="punk">Punk</option>
+            <option value="indie">Indie</option>
+        </select>
+        <br>
+        <label for="localizacion">Localización:</label>
+        <input type="text" id="localizacion" name="localizacion" required>
+        <br>
+
+        <label for="prestado">Prestado:</label>
+        <input type="checkbox" id="prestado" name="prestado">
+        <br>
+
+        <label for="caratula">Carátula</label>
+        <input type="file" id="caratula">
+        <br>
+        <button type="submit" id="enviar">Guardar Información</button>
+    </form>
+</body>
+
+</html>
