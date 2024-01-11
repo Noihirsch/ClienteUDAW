@@ -1,14 +1,23 @@
 import Tarea from "./tarea";
-
 window.addEventListener("load", inicio);
-allMyTasks = [];
+
+AllTareas = [];
 
 function inicio() {
-    document.getElementById("add").addEventListener("click", addTask);
-    }
+    document.getElementById("add").addEventListener("click", añadirTarea);
+}
 
-function addTask(texto, realizada){
-    new Tarea = Tarea(texto, realizada);
-    var parrafo = document.createElement("p");
-    }
+function añadirTarea () {
+    var tareaInput = document.getElementById("task");
+    let newTarea = new Tarea(tareaInput.value);
+
+    var texto = document.createTextNode(document.getElementById("<ul>dsd</ul>").value);
+    parrafo.appendChild(texto);
+
+
+    tareaInput.value = "";
+}
+
+
+
 

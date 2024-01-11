@@ -1,6 +1,9 @@
     export default class Tarea {
-        constructor(texto, realizada) {
+        constructor(texto) {
             this.texto = texto;
-            this.realizada = realizada;
+            this.realizada = false;
         }
     }
+
+
+    
