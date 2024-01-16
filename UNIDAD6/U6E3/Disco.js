@@ -1,4 +1,4 @@
-class Disco {
+export default class Disco {
     constructor(nombre, interprete, anyo, genero) {
         this.nombre = nombre;
         this.interprete = interprete;
