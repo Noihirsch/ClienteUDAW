@@ -1,0 +1,29 @@
+<DISCOS>
+<CD>
+    <NOMBRE>Opus Eponymous</NOMBRE>
+    <INTERPRETE>Ghost</INTERPRETE>
+    <ANYO>2010</ANYO>
+    <GENERO>Heavy Metal</GENERO>
+    <LOCALIZACION>1A</LOCALIZACION>
+    <PRESTADO>No</PRESTADO>
+    <CARATULA>imagen_opus_eponymous.jpg</CARATULA>
+</CD>
+<CD>
+    <NOMBRE>Infestissumam</NOMBRE>
+    <INTERPRETE>Ghost</INTERPRETE>
+    <ANYO>2013</ANYO>
+    <GENERO>Heavy Metal</GENERO>
+    <LOCALIZACION>B2</LOCALIZACION>
+    <PRESTADO>Sí</PRESTADO>
+    <CARATULA>imagen_infestissumam.jpg</CARATULA>
+</CD>
+<CD>
+    <NOMBRE>Meliora</NOMBRE>
+    <INTERPRETE>Ghost</INTERPRETE>
+    <ANYO>2015</ANYO>
+    <GENERO>Heavy Metal</GENERO>
+    <LOCALIZACION>3D</LOCALIZACION>
+    <PRESTADO>No</PRESTADO>
+    <CARATULA>imagen_meliora.jpg</CARATULA>
+</CD>
+</DISCOS>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="mostrarDiscos">Mostrar Discos</button>
+    <div id="texto"></div>
+
+    <script>
+        document.getElementById("mostrarDiscos").addEventListener("click", cambiarContenido);
+    
+        function cambiarContenido() {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    cargarXML(this);
+                }
+            };
+            xhr.open("GET", "discos.xml", true);
+            xhr.send();
+    
+            function cargarXML(xml) {
+                var discosXML = xml.responseXML;
+                var tabla = "<table><tr><th>Artista</th><th>Titulo</th></tr>";
+                var discos = discosXML.getElementsByTagName("CD");
+                for (var i = 0; i < discos.length; i++) {
+                    var nombre = discos[i].getElementsByTagName("NOMBRE")[0].textContent;
+                    var interprete = discos[i].getElementsByTagName("INTERPRETE")[0].textContent;
+                    var anyo = discos[i].getElementsByTagName("ANYO")[0].textContent;
+                    var genero = discos[i].getElementsByTagName("GENERO")[0].textContent;
+                    var localizacion = discos[i].getElementsByTagName("LOCALIZACION")[0].textContent;
+                    var prestado = discos[i].getElementsByTagName("LOCALIZACION")[0].textContent;
+
+                    tabla += "<tr><td>" + interprete + "</td><td>" + nombre + "</td></tr>" + año + "</td></tr>" + genero + "</td></tr>" + localizacion + "</td></tr>" + prestado + "</td></tr>" + caratula ;
+                }
+                tabla += "</table>";
+                document.getElementById("texto").innerHTML = tabla;
+            }
+        }
+    </script>
+    
+</body>
+</html>

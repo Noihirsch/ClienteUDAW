@@ -1,0 +1,21 @@
+{
+    "apartamentos": [
+      {
+        "nombre": "Penélope Cruz",
+        "provincia": "Madrid",
+        "cuota": 50000000
+      },
+      {
+        "nombre": "Melendi" ,
+        "provincia": "Castilla",
+        "cuota":500000040
+      },
+      {
+        "nombre": "Pedro Almodóvar" ,
+        "provincia": "Cataluña",
+        "cuota":30000000
+      }
+      
+    ]
+}
+      

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="mostrarApartamentos">Mostrar Apartamentos</button>
+    <div id="texto"></div>
+
+    <script>
+        document.getElementById("mostrarApartamentos").addEventListener("click", cambiarContenido);
+        function cambiarContenido(){
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var discos = JSON.parse(this.responseText);
+                    document.getElementById("texto").innerHTML = JSON.stringify(apartamentos, null, 2);
+                }
+            };
+
+            xhr.open("GET", "apartamentos.json", true);
+            xhr.send(); 
+        }
+    </script>
+</body>
+</html>
