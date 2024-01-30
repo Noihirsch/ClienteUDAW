@@ -41,13 +41,11 @@ function obtenerDatos(){
         data.partidos.forEach(function(partido){
             if (partido.equipo === equipoSeleccionado) {
                 output += `
-                <ul>
-                <li>Equipo: ${partido.equipo}</li>
-                <li>Partidos jugados: ${partido.PJ}</li>
-                <li>Partidos ganados: ${partido.PG}</li>
-                <li>Partidos perdidos: ${partido.PP}</li>
-                <li>Partidos empatados: ${partido.PE}</li>
-                </ul>
+                Equipo: ${partido.equipo}<br>
+                Partidos jugados: ${partido.PJ}</br>
+                Partidos ganados: ${partido.PG}</br>
+                Partidos perdidos: ${partido.PP}</br>
+                Partidos empatados: ${partido.PE}</br>
                 `;
             }
         });

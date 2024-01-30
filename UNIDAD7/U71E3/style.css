@@ -6,7 +6,7 @@
   
   body {
     height: 100vh;
-    background: #2b4a8b;
+    background: #86c7ac;
   }
   
   p {
@@ -15,7 +15,7 @@
   
   h1 {
     color: whitesmoke;
-    text-transform: uppercase;
+    font-family:fantasy;
     text-align: center;
     margin-top: 50px;
   }
@@ -46,7 +46,6 @@
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform 0.5s;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
   }
   
   .memory-card:active {
@@ -64,7 +63,7 @@
     padding: 20px;
     position: absolute;
     border-radius: 5px;
-    background: burlywood;
+    background: #a798eb;
     backface-visibility: hidden;
   }
   
@@ -74,7 +73,7 @@
     padding: 20px;
     position: absolute;
     border-radius: 5px;
-    background: #f0b801;
+    background: #a798eb;
     backface-visibility: hidden;
   }
   
@@ -91,7 +90,6 @@
   span {
     font-size: 10px;
     padding: 5px;
-    color: black;
     background-color: #f0b801;
     opacity: 0;
     z-index: 2;
