@@ -1,0 +1,47 @@
+body {
+    background-color: lightblue;
+}
+
+.container 
+{
+    text-align: center;
+    justify-content: center;
+
+}
+
+h1 {
+    color: rgb(180, 134, 199);
+    margin-left: 20px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+input[type="text"]
+{
+        width: 30%;
+        height: 30px;
+        padding: 12px 20px;
+        border-color: lightblue;
+        margin: 8px;
+        border-radius: 40px;
+        box-sizing: border-box;
+}
+
+
+input[type="button"]
+{
+        width: 30%;
+        height: 30px;
+        margin: 8px 0;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        border-radius: 40px;
+        background-color: rgb(210, 169, 243);
+        color: white;
+        border: solid 2;
+        border-color: rgb(210, 169, 243);
+        box-sizing: border-box;
+}
+
+.incorrecto {
+    text-decoration:line-through;
+    color: red;
+}
