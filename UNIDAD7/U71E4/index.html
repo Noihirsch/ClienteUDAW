@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+
+<script>
+
+function mostrarPartidos(){
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var partidosJSON = JSON.parse(this.responseText);
+            var str = '<select id="equipos">';
+            partidosJSON.partidos.forEach(function(partido) {
+                str += '<option value="' + partido.equipo + '">' + partido.equipo + '</option>';
+            });
+            str += '</select>';
+            document.getElementById("partidos").innerHTML = str;
+            document.getElementById('equipos').addEventListener('change', obtenerDatos);
+        }
+    };
+
+    xhr.open("GET", "partidos.json", true);
+    xhr.send(); 
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    mostrarPartidos();
+});
+
+function obtenerDatos(){
+    var equipoSeleccionado = document.getElementById('equipos').value;
+    fetch('partidos.json')
+    .then((res) => res.json())
+    .then((data) => {
+        let output = '<h2>Partidos</h2>';
+        data.partidos.forEach(function(partido){
+            if (partido.equipo === equipoSeleccionado) {
+                output += `
+                <ul>
+                <li>Equipo: ${partido.equipo}</li>
+                <li>Partidos jugados: ${partido.PJ}</li>
+                <li>Partidos ganados: ${partido.PG}</li>
+                <li>Partidos perdidos: ${partido.PP}</li>
+                <li>Partidos empatados: ${partido.PE}</li>
+                </ul>
+                `;
+            }
+        });
+        document.getElementById('datos').innerHTML = output;
+    })
+    .catch(error => console.error('Error fetching data:', error));
+}
+</script>
+
+<div id="partidos">
+</div>
+<div id="datos">
+</div>
+
+</body>
+</html>

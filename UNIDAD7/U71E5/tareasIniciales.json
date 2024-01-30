@@ -1,0 +1,21 @@
+{
+    "iniciales": [
+      {
+        "nombre": "Hacer la compra",
+        "realizada": false
+      },
+      {
+        "nombre": "Estudiar para el exámen",
+        "realizada": false
+      },
+      {
+        "nombre": "Pasear al perro",
+        "realizada": false
+      },
+      {
+        "nombre": "Limpiar la habitación",
+        "realizada": false
+      }
+    ]
+  }
+  

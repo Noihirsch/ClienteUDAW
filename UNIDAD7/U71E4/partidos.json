@@ -1,0 +1,33 @@
+{
+    "partidos": [
+      {
+        "equipo": "Real Madrid",
+        "PJ": 10,
+        "PG": 6,
+        "PP": 3,
+        "PE": 1
+      },
+      {
+        "equipo": "FC Barcelona",
+        "PJ": 10,
+        "PG": 7,
+        "PP": 2,
+        "PE": 1
+      },
+      {
+        "equipo": "Betis",
+        "PJ": 9,
+        "PG": 4,
+        "PP": 3,
+        "PE": 2
+      },
+      {
+        "equipo": "Depor",
+        "PJ": 11,
+        "PG": 8,
+        "PP": 2,
+        "PE": 1
+      }
+    ]
+  }
+  
