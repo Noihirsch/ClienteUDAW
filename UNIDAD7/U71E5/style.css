@@ -33,9 +33,10 @@ input {
     width: 25%;
     padding: 10px;
     margin-left: 0;
-    background-color: aquamarine;
+    background-color: rgb(138, 194, 172);
     color: #555;
     text-align: center;
+    margin-left:45%;
     font-size: 14px;
     cursor: pointer;
     transform: 0.3s;
@@ -101,7 +102,3 @@ ul li.checked::before {
     color: white;
 }
 
-.incorrecto {
-    text-decoration: line-through;
-    color: red;
-}
