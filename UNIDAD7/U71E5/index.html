@@ -1,19 +1,28 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo list App</title>
     <link rel="stylesheet" href="style.css">
-    <title>To-do</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/unicons.css"/>
 </head>
 <body>
-    <div class="container">
-        <h1>Lista de tareas</h1>
-        <input type="text" id="myInput" placeholder="Introducir tarea"/>
-        <div class="addBtn" id="add_button">Añadir</div>
-        <ul id="misTareas">
-        </ul>
-        <script src="script.js"></script>
+    <div class="wrapper">
+        <div class="tarea-input">
+            <img src="menu24.png" alt="icon">
+            <input type="text" placeholder="Añadir tarea">
+        </div>
+        <div class="control">
+            <div class="filtros">
+                <span class="active" id="todos">Todo</span>
+                <span class="pending">Pendientes</span>
+                <span class="completed">Completados</span>
+            </div>
+            <button class="clear-btn">Limpiar lista</button>
+        </div>
+        <ul class="task-box"></ul>
+    </div>
+    <script src="script.js"></script>
 </body>
-
 </html>
