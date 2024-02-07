@@ -8,20 +8,23 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/unicons.css"/>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="tarea-input">
-            <img src="menu24.png" alt="icon">
-            <input type="text" placeholder="Añadir tarea">
+
+    <div class="container">
+        <h1>Mis tareas</h1>
+        <div class="input">
         </div>
-        <div class="control">
-            <div class="filtros">
-                <span class="active" id="todos">Todo</span>
-                <span class="pending">Pendientes</span>
-                <span class="completed">Completados</span>
-            </div>
-            <button class="clear-btn">Limpiar lista</button>
+        <form>
+            <input type="text" placeholder="Agregar tarea" id="input">
+            <button type="text" class="add-button">+</button>
+        </form>
         </div>
-        <ul class="task-box"></ul>
+        <div class="li-container">
+        <ul>
+
+        </ul>
+    </div>
+    <div class="empty">
+        <p></p>
     </div>
     <script src="script.js"></script>
 </body>
