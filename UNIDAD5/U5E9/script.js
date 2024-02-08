@@ -8,48 +8,74 @@ function iniciar() {
     document.getElementById("enviar").addEventListener('click', validar, false);
 }
 
+let localData = localStorage.getItem("user");
+if (localData) {
+  document.getElementById("name").value = localData;
+}
+
+
 function validaNombre() {
     var elemento = document.getElementById("nombre");
     if (!elemento.checkValidity()) {
         if (elemento.validity.valueMissing) {
-            error(elemento, "Introduce tu nombre");
+            error(elemento, "<b>!</b>Introduce tu nombre");
             return false;
+        }
+    }
+
+    if (!elemento.checkValidity()) {
+        if (elemento.validity.patternMismatch){
+            error(elemento, "<b>!</b> Es necesario que el nombre tenga entre 1 y 40 caracteres")
         }
     }
     return true;
 }
 
 function validaNumeroCorreo() {
-    let isNumero = false;
-    var correoRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     var elemento = document.getElementById("movilmail");
+    var valor = elemento.value.trim();
 
-    if (correoRegex.test(elemento.value)) {
-        isNumero=true;
-        if (isNumero == true){
-            if (isNaN(elemento.value)) {
-                error2(elemento, "Indica tu dirección de email o teléfono móvil");
-                return false;
+    var correoRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var numeroRegex = /^(\+34|0034|34)?[6789]\d{8}$/;
+
+    if (!elemento.checkValidity()) {
+        if (elemento.validity.valueMissing) {
+            error2(elemento, "<b>!</b> Debe introducir tus datos");
+            return false;
+        } else if (!correoRegex.test(valor) && !numeroRegex.test(valor)) {
+            error2(elemento, "<b>!</b> Formato de correo o número no válido");
+            return false;
+        } else if (numeroRegex.test(valor)) {
+            isNumero = true;
+            console.log("<b>!</b> Usuario introdujo un número de teléfono.");
+            return true;
         }
-        return true;
+        else return true;
     }
-    return true;
-}
+
 }
 
 function validaContrasenya() {
-
-    var elemento1 = document.getElementById("contrasenya");
-    var elemento2 = document.getElementById("contrasenya2");
-    if (elemento1.length<6){
-        error(elemento, "Mínimo de 6 caracteres obligatorios");
-        return false;
+  var elemento1 = document.getElementById("contrasenya");
+  var elemento2 = document.getElementById("contrasenya2");
+  if (!elemento1.checkValidity()) {
+    if (elemento1.validity.valueMissing || elemento2.validity.valueMissing) {
+      error(elemento, "<b>!</b> Introduce tu contraseña");
     }
-    if (elemento2!==elemento1){
-        error3(elemento, "Las contraseñas no coinciden");
-        return false;
+
+    if (elemento.validity.patternMismatch) {
+        error(
+          elemento,
+          "<b>!</b> El número de caracteres mínimos es seis."
+        );
+      }
+
+    if (elemento2.value !== elemento1.value) {
+      error3(elemento, "Las contraseñas no coinciden");
+      return false;
     }
     return true;
+  }
 }
 
 function validar(e) {
@@ -63,22 +89,29 @@ function validar(e) {
 }
 
 function error(elemento) {
-    document.getElementById("mensajeError").innerHTML = elemento.validationMessage;
+    document.getElementById("errornombre").innerHTML = elemento.validationMessage;
+    elemento.className = "error";
+    elemento.focus();
+}
+
+function error1(elemento, mensaje) {
+    document.getElementById("errorcorreo").innerHTML = mensaje;
     elemento.className = "error";
     elemento.focus();
 }
 
 function error2(elemento, mensaje) {
-    document.getElementById("mensajeError").innerHTML = mensaje;
+    document.getElementById("errorc1").innerHTML = mensaje;
     elemento.className = "error";
     elemento.focus();
 }
 
 function error3(elemento, mensaje) {
-    document.getElementById("mensajeError").innerHTML = mensaje;
+    document.getElementById("errorc2").innerHTML = mensaje;
     elemento.className = "error";
     elemento.focus();
 }
+
 
 function borrarError() {
     var formulario = document.forms[0];

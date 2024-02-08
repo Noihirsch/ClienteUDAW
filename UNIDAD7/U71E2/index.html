@@ -24,7 +24,7 @@
     
             function cargarXML(xml) {
                 var discosXML = xml.responseXML;
-                var tabla = "<table><tr><th>Artista</th><th>Titulo</th></tr>";
+                var tabla = "<table><tr><th>Artista</th><th>Titulo</th><th>Año</th><th>Género</th><th>Localización</th><th>Prestado</th><th>Caratula</th></tr>";
                 var discos = discosXML.getElementsByTagName("CD");
                 for (var i = 0; i < discos.length; i++) {
                     var nombre = discos[i].getElementsByTagName("NOMBRE")[0].textContent;
@@ -32,9 +32,10 @@
                     var anyo = discos[i].getElementsByTagName("ANYO")[0].textContent;
                     var genero = discos[i].getElementsByTagName("GENERO")[0].textContent;
                     var localizacion = discos[i].getElementsByTagName("LOCALIZACION")[0].textContent;
-                    var prestado = discos[i].getElementsByTagName("LOCALIZACION")[0].textContent;
+                    var prestado = discos[i].getElementsByTagName("PRESTADO")[0].textContent;
+                    var caratula = discos[i].getElementsByTagName("CARATULA")[0].textContent;
 
-                    tabla += "<tr><td>" + interprete + "</td><td>" + nombre + "</td></tr>" + año + "</td></tr>" + genero + "</td></tr>" + localizacion + "</td></tr>" + prestado + "</td></tr>" + caratula ;
+                    tabla += "<tr><td>" + interprete + "</td><td>" + nombre + "</td><td>" + anyo + "</td><td>" + genero + "</td><td>" + localizacion + "</td><td>" + prestado + "</td><td>" + caratula + "</td></tr>";
                 }
                 tabla += "</table>";
                 document.getElementById("texto").innerHTML = tabla;
