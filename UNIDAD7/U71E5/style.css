@@ -4,7 +4,6 @@ body {
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
-  background-color: lightseagreen;
   color: white;
 }
 
@@ -78,10 +77,46 @@ li p {
   font-size: 1.2em;
 }
 
+.done-button {
+    margin-left: auto;
+    border: none;
+    background-color: #6ae98a;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    outline: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 10%;
+    font-size: 1.2em;
+  } 
+
+
 .delete-button:hover {
   cursor: pointer;
   background-color: lightseagreen;
 }
+
+
+.done-button:hover {
+    margin-left: auto;
+    border: none;
+    background-color: #d03a35;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    outline: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 10%;
+    font-size: 1.2em;
+  } 
+
+  
+.done-button:hover {
+    cursor: pointer;
+    background-color: rgb(255, 54, 54);
+  }
 
 .add-button {
   padding: 5px 15px;

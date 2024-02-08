@@ -19,6 +19,7 @@ botonAniadir.addEventListener("click", (e) => {
 
     li.appendChild(p);
     li.appendChild(addBorrar());
+    li.appendChild(addHecha());
     ul.appendChild(li);
 
     let t1 = new Tarea(nombreTarea.value);
@@ -45,4 +46,25 @@ function addBorrar() {
   });
 
   return deleteButton;
+
+  
 }
+
+function addHecha() {
+    const doneButton = document.createElement("button");
+    doneButton.textContent = "✓ ";
+    doneButton.className = "done-button";
+
+    doneButton.addEventListener("click", (e) => {
+      const item = e.target.parentElement;
+      const textoATachar = document.getElementById(item.value);
+
+      textoATachar.style.textDecoration = "line-through";
+  
+      if (items.length === 0) {
+        empty.style.display = "block";
+      }
+    });
+  
+    return doneButton;
+  }
