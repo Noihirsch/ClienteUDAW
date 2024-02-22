@@ -4,25 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="script.js"></script>
 </head>
+
 <body>
     <button id="mostrarApartamentos">Mostrar Apartamentos</button>
     <div id="texto"></div>
+    
+    <div id="classify">
+        <p> 1- Ordenar por nombre</p>
+        <p> 2- Filtrar por nacionalidad</p>
+        <input type="text" id="opcion"/>
+        <button id="enviar">Enviar</button><br /><br />
+        <p id="error1" class="error"></p>
+    </div>
+ 
 
-    <script>
-        document.getElementById("mostrarApartamentos").addEventListener("click", cambiarContenido);
-        function cambiarContenido(){
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    var apartamentos = JSON.parse(this.responseText); 
-                    document.getElementById("texto").innerHTML = JSON.stringify(apartamentos, null, 2);
-                }
-            };
-
-            xhr.open("GET", "apartamentos.json", true);
-            xhr.send(); 
-        }
-    </script>
+    
 </body>
+
 </html>
