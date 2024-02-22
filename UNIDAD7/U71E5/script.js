@@ -39,6 +39,7 @@ botonAniadir.addEventListener("click", (e) => {
 
     li.appendChild(p);
     li.appendChild(addBorrar());
+    li.appendChild(addHecha());
     ul.appendChild(li);
 
     let t1 = new Tarea(nombreTarea);
