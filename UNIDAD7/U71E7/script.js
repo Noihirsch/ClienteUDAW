@@ -34,7 +34,6 @@ function mostrarPilotos() {
         var equipoSeleccionado = document.getElementById("equipos").value;
   
         data.piloto.forEach(function (piloto) {
-          if (equipoSeleccionado === "Todos" || piloto.equipo === equipoSeleccionado) {
             output += `
               <tr>
                 <td>${piloto.nombre}</td>
@@ -44,7 +43,7 @@ function mostrarPilotos() {
               </tr>
             `;
           }
-        });
+        );
   
         output += "</table>";
         document.getElementById("datos").innerHTML = output;
