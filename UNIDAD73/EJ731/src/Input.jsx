@@ -9,7 +9,7 @@ export default function Input({ addTarea }) {
 
   return (
     <div id="barra" style={{ backgroundColor: "white", color: "pink", padding: "60px", borderRadius: "45px" }}>
-      <h2>Añadir tarea</h2>
+      <h2>Todo list</h2>
       <div className="row justify-content-center">
         <div className="col-6 mt-3 align-self-end">
           <div className="input-group">
@@ -18,7 +18,7 @@ export default function Input({ addTarea }) {
               type="text"
               value={tareaValue}
               onChange={(e) => setTareaValue(e.target.value)}
-              style={{ backgroundColor: "white", borderColor: "pink", color: "pink"}} 
+              style={{ backgroundColor: "white", borderColor: "pink", color: "pink" }}
             ></input>
             <div className="borrartexto">
               <button
@@ -27,9 +27,8 @@ export default function Input({ addTarea }) {
                   addTarea(tareaValue);
                   vaciarInput();
                 }}
-                type="button"
-              >
-                Borrar
+                type="button">
+                Añadir
               </button>
             </div>
           </div>
