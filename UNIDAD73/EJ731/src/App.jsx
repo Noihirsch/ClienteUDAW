@@ -6,40 +6,50 @@ import Lista from './Lista';
 function App() {
   const [tasks, setTasks] = useState({ tasks: [] });
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('tareasIniciales.json');
+        const data = await response.json();
+        setTasks({ tasks: data.iniciales });
+      } catch (error) {
+        console.error('Los datos no son incorrectos:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   const addTarea = (tarea) => {
-    let i = tasks["tasks"];
-    let task = { id: i.length + 1, text: tarea, strike: false };
-    i.push(task);
-    setTasks({ tasks: i });
+    setTasks((prevTasks) => {
+      return {
+        tasks: [...prevTasks.tasks, { id: prevTasks.tasks.length + 1, text: tarea, strike: false }],
+      };
+    });
   };
 
-const deleteTarea = (tareaid) => {
-  let j = tasks["tasks"];
-  let resultado = [];
-  for (let i = 0; i < j.length; i++) {
-    console.log(j[i].id, tareaid);
-    if (j[i].id !== +tareaid) {
-      resultado.push(j[i]);
-    }
-  }
-  setTasks({ tasks: resultado });
-};
+  const deleteTarea = (tareaid) => {
+    setTasks((prevTasks) => {
+      return {
+        tasks: prevTasks.tasks.filter((task) => task.id !== +tareaid),
+      };
+    });
+  };
 
+  const doneTarea = (tareaid) => {
+    setTasks((prevTasks) => {
+      return {
+        tasks: prevTasks.tasks.map((task) =>
+          task.id === +tareaid ? { ...task, strike: true } : task
+        ),
+      };
+    });
+  };
 
-
-const doneTarea = (tareaid) => {
-  setTasks((prevTasks) => {
-    return {
-      tasks: prevTasks.tasks.map((task) =>
-        task.id === +tareaid ? { ...task, strike: true } : task
-      ),
-    };
-  });
-};
   return (
     <div className="App container text-center">
       <Input addTarea={addTarea} />
-      <Lista tasksList={tasks["tasks"]} removeTaskCallback={deleteTarea} strikeTaskCallback={doneTarea} />
+      <Lista tasksList={tasks.tasks} removeTaskCallback={deleteTarea} strikeTaskCallback={doneTarea} />
     </div>
   );
 }
